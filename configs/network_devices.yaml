@@ -1,0 +1,46 @@
+devices:
+  CSR1:
+    device_type: cisco_xe
+    host: 192.168.100.10
+    username: admin
+    password: cisco
+    secret: cisco
+    role: core_router
+    ospf_area: 0
+    bgp_asn: 65001
+    
+  CSR2:
+    device_type: cisco_xe
+    host: 192.168.100.11
+    username: admin
+    password: cisco
+    secret: cisco
+    role: distribution_router
+    ospf_area: 0
+    bgp_asn: 65001
+    
+  CSR3:
+    device_type: cisco_xe
+    host: 192.168.100.12
+    username: admin
+    password: cisco
+    secret: cisco
+    role: edge_router
+    ospf_area: 0
+    bgp_asn: 65002
+
+ospf_config:
+  process_id: 1
+  areas:
+    - area_id: 0
+      type: backbone
+      networks:
+        - "192.168.100.0/24"
+        - "10.0.0.0/8"
+
+bgp_config:
+  local_as: 65001
+  neighbors:
+    - neighbor_ip: 192.168.100.12
+      remote_as: 65002
+      description: "eBGP to CSR3"

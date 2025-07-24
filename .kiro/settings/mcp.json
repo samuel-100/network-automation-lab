@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "network-monitor": {
+      "command": ".venv/bin/python",
+      "args": ["scripts/mcp_network_server.py"],
+      "env": {
+        "PYTHONPATH": ".",
+        "NETWORK_CONFIG_PATH": "configs/network_devices.yaml"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "get_ospf_neighbors",
+        "get_bgp_summary",
+        "get_routing_table",
+        "get_interface_status",
+        "check_ospf_database",
+        "check_bgp_routes"
+      ]
+    }
+  }
+}

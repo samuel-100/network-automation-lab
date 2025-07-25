@@ -118,7 +118,7 @@ Thumbs.db
     print("\n📋 Next steps:")
     print("1. Create a new repository on GitHub")
     print("2. Add the remote origin:")
-    print("   git remote add origin https://github.com/yourusername/network-automation-lab.git")
+    print("   git remote add origin https://github.com/samuel-100/network-automation-lab.git")
     print("3. Push to GitHub:")
     print("   git branch -M main")
     print("   git push -u origin main")

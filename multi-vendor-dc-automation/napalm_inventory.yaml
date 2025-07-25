@@ -1,0 +1,80 @@
+# File: napalm_inventory.yaml
+spine_switches:
+  spine-01:
+    driver: eos
+    hostname: 192.168.100.13
+    username: admin
+    password: arista
+    optional_args:
+      transport: https
+      port: 443
+      
+  spine-02:
+    driver: nxos  
+    hostname: 192.168.100.14
+    username: admin
+    password: cisco
+    optional_args:
+      transport: https
+      port: 443
+      
+  spine-03:
+    driver: junos
+    hostname: 192.168.100.15
+    username: admin
+    password: juniper
+    optional_args:
+      port: 830
+
+leaf_switches:
+  leaf-01:
+    driver: nxos
+    hostname: 192.168.100.21
+    username: admin
+    password: cisco
+    optional_args:
+      transport: https
+      port: 443
+      
+  leaf-02:
+    driver: eos
+    hostname: 192.168.100.22
+    username: admin
+    password: arista
+    optional_args:
+      transport: https
+      port: 443
+      
+  leaf-03:
+    driver: junos
+    hostname: 192.168.100.23
+    username: admin
+    password: juniper
+    optional_args:
+      port: 830
+      
+  leaf-04:
+    driver: ce
+    hostname: 192.168.100.24
+    username: admin
+    password: huawei
+    optional_args:
+      port: 22
+      
+  leaf-05:
+    driver: nxos
+    hostname: 192.168.100.25
+    username: admin
+    password: cisco
+    optional_args:
+      transport: https
+      port: 443
+      
+  leaf-06:
+    driver: eos
+    hostname: 192.168.100.26
+    username: admin
+    password: arista
+    optional_args:
+      transport: https
+      port: 443
